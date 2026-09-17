@@ -5,6 +5,7 @@
 const users = {
   admin: { password: '123', locked: false },
   locked_user: { password: '123', locked: true },
+  user1: { password: '456', locked: false }, // <-- BỔ SUNG: Tài khoản thường để kiểm thử
 };
 
 /**
@@ -19,7 +20,10 @@ function login(username, password) {
     return false;
   }
 
-  const user = users[username];
+  // BỔ SUNG: Xử lý loại bỏ khoảng trắng thừa ở đầu/cuối username
+  const cleanUsername = typeof username === 'string' ? username.trim() : username;
+
+  const user = users[cleanUsername];
 
   // Tài khoản không tồn tại
   if (!user) {
