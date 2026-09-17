@@ -3,7 +3,7 @@
  * Trong thực tế, dữ liệu này sẽ được lấy từ database.
  */
 const users = {
-  admin: { password: '123', locked: false },
+  admin: { password: '9999', locked: false },
   locked_user: { password: '123', locked: true },
   user1: { password: '456', locked: false }, // <-- BỔ SUNG: Tài khoản thường để kiểm thử
 };
